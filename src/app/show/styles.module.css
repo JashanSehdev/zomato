@@ -1,0 +1,84 @@
+
+.container{
+    max-width: 90rem;
+    margin : 0 auto;
+}
+
+.rating {
+    background-color: darkgreen;
+    width: 70px;
+    padding: 0.2rem 0.5rem;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.section1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.opensAt {
+    display: flex;
+    border : 1px black solid;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    gap:0.4rem;
+}
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: #f35a6e;
+}
+
+.image {
+    margin: 2rem 0;
+    max-width: 1000px;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.ListItem:active{
+    border-right: #f35a6e 2px solid;
+    background-color: #f35a6e;
+}
+.ListItem{
+    display: grid;
+    border :#f1ebef 2px solid;
+    grid-template: 'check isVeg foodName chef price';
+    width: 100%;
+    gap: 1rem;
+}
+
+.menuItem{
+  
+}
+
+.checkbox{
+    grid-area : check
+}
+
+.isVeg{
+    grid-area : isVeg
+}
+
+.foodName{
+    grid-area : foodName
+}
+
+.chef{
+    grid-area : chef
+}
+.price{
+    grid-area: price;
+}

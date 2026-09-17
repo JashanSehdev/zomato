@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width:100%;
+    max-width: 500px;
+    height: 72px;
+    padding: 0 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    display: flex;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    outline: none;
+    border: 0px;
+    padding: 0 1rem;
+    width: 100%;
+}
