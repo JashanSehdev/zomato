@@ -2,13 +2,10 @@
 import {
   Avatar,
   Box,
-  Checkbox,
   Chip,
   Divider,
   IconButton,
   List,
-  ListItem,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../hooks";
@@ -16,7 +13,6 @@ import styles from "./styles.module.css";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { redirect } from "next/navigation";
-import { addCartItem } from "@/features/cart/cart-list/cart.action";
 import { useEffect, useState } from "react";
 import { Food } from "@/types/restaurant.type";
 import FoodCard from "./food-card/food-card";
@@ -34,8 +30,7 @@ const nonVegIcon =
 
 export default function Show() {
   const data = useAppSelector((state) => state.restaurant.restaurant);
-  const cart = useAppSelector((state) => state.cart.cart);
-  const search = useAppSelector((state) => state.search.search);
+  const {menuSearch} = useAppSelector((state) => state.search);
   const dispatch = useAppDispatch();
   const [menuItem, setMenuItem] = useState<Food[]>([]);
   const [veg, setVeg] = useState<string>("");
@@ -55,9 +50,9 @@ export default function Show() {
   }, {});
 
   let filteredMenu = menuItem.filter((item) => {
-    if (search.length < 2) return true;
+    if (menuSearch.length < 2) return true;
 
-    const searchTerm = search.toLowerCase();
+    const searchTerm = menuSearch.toLowerCase();
 
     return item.dish_name.toLowerCase().includes(searchTerm);
   });
@@ -182,7 +177,7 @@ export default function Show() {
               </Box>
 
               {filteredMenu.map((item) => (
-                <FoodCard food={item} key={item.id} />
+                <FoodCard restaurant_name={data.restaurant_name} food={item} key={item.id} />
               ))}
             </Box>
           </Box>

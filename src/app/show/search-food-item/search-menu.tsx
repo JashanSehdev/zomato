@@ -3,7 +3,7 @@ import { Avatar, Box, Typography } from '@mui/material';
 import styles from './search-menu.module.css'
 import { useAppDispatch } from '@/app/hooks';
 import { ChangeEvent } from 'react';
-import { setSearch } from '@/features/search/search.slice';
+import { setMenuSearch } from '@/features/search/search.slice';
 
 
 
@@ -11,7 +11,7 @@ export default function SearchMenu () {
       const dispatch = useAppDispatch();
   const handleChange = (event : ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
     const {value} = event.target;
-    dispatch(setSearch(value))
+    dispatch(setMenuSearch(value))
   } 
     return (
         <Box className={styles.container}>

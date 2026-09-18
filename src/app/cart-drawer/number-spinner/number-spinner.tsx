@@ -9,11 +9,11 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import { useAppDispatch } from '@/app/hooks';
-import { decrease } from '@/features/cart/cart.slice';
+import { decrease, decreaseCartItem, increaseCartItem } from '@/features/cart/cart.slice';
 import { CartItems } from '@/types/restaurant.type';
 
 export default function NumberSpinner({
-  cartItem,
+  foodId,
   id: idProp,
   label,
   error,
@@ -23,7 +23,7 @@ export default function NumberSpinner({
   label?: React.ReactNode;
   size?: 'small' | 'medium';
   error?: boolean;
-  cartItem : CartItems;
+  foodId : number;
 }) {
 
     const dispatch = useAppDispatch();
@@ -88,7 +88,7 @@ export default function NumberSpinner({
         <BaseNumberField.Decrement
           render={
             <Button
-            onClick={() => {dispatch(decrease(cartItem))}}
+            onClick={() => {dispatch(decreaseCartItem(foodId))}}
               variant="outlined"
               aria-label="Decrease"
               size={size}
@@ -138,6 +138,7 @@ export default function NumberSpinner({
         <BaseNumberField.Increment
           render={
             <Button
+            onClick={() => {dispatch(increaseCartItem(foodId))}}
               variant="outlined"
               aria-label="Increase"
               size={size}

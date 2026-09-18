@@ -1,15 +1,17 @@
-import { CartItems} from "@/types/restaurant.type";
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { addCartItem } from "./cart-list/cart.action";
+
 
 
 
 type InitialState = {
-    search: string
+    search: string,
+    menuSearch : string
 }
 
 const initialState : InitialState= {
-    search : ""
+    search : "",
+    menuSearch : ""
 }
 
 const searchSlice = createSlice({
@@ -18,11 +20,14 @@ const searchSlice = createSlice({
     reducers : {
         setSearch(state, action: PayloadAction<string>){
             state.search = action.payload.trim();
+        },
+        setMenuSearch(state, action : PayloadAction<string>){
+            state.menuSearch = action.payload.trim();
         }
     },
 
 })
 
-export const {setSearch} = searchSlice.actions
+export const {setSearch , setMenuSearch} = searchSlice.actions
 
 export default searchSlice.reducer
