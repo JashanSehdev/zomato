@@ -30,7 +30,11 @@ export default function CartDrawer() {
   const DrawerList = (
     <Box sx={{ width: 500 }} role="presentation" >
       <List>
-        {cart.map((item, index) => (
+        { cart.length === 0 ? 
+          <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', height:'90dvh',  scrollbarWidth:'none'}}>
+            <Typography>Cart is Empty</Typography>
+          </Box>
+        :cart.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -49,7 +53,7 @@ export default function CartDrawer() {
         ))}
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -58,9 +62,10 @@ export default function CartDrawer() {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
+
 
   return (
     <div>

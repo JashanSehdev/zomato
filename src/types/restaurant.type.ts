@@ -13,6 +13,8 @@ export type Restaurant = {
 };
 
 export type Food = {
+  id :number,
+  image : string,
   dish_name: string;
   description: string;
   price: number;

@@ -61,7 +61,10 @@
 }
 
 .menuItem{
-  
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .checkbox{
@@ -81,4 +84,59 @@
 }
 .price{
     grid-area: price;
+}
+
+.category_selected {
+    height: 2rem;
+    background-color: ;
+    color: #f35a6e;
+    font-size: 20px;
+}
+
+.category {
+  position: relative;
+  margin-bottom: 0.2rem;
+
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  background: #fff1f3;
+  color: #ff4d5f;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  border-right: 3px solid #ff4d5f;
+  box-sizing: border-box;
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+
+  top: -3px;
+  right: 0;
+
+  width: 50%;
+  height: 3px;
+
+}
+
+.displayFoodItem{
+
+    height: 500px;
+    overflow: scroll;
+    scrollbar-width: none ;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: center;
 }

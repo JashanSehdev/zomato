@@ -1,0 +1,36 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+} 
+
+.image {
+    border-radius: 10px;
+    object-fit:cover ;
+}
+
+.details {
+    height: 130px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    
+}
+
+.addCartButton{
+    width: 150px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: #f35a6e;
+    background-color: transparent;
+    border: #f35a6e 2px solid;
+}
+
+.addCartButton:hover {
+    color: white;
+    background-color: #f35a6e;
+}
